@@ -21,6 +21,9 @@ func main() {
     })
   })
 
-  router.GET("/createPosts", controllers.PostsCreate)
+  router.POST("/createPosts", controllers.PostsCreate)
+  router.GET("/getPosts", controllers.PostIndex)
+  router.GET("/posts/:id", controllers.PostById)
+
   router.Run() // listens on 0.0.0.0:8080 by default or we can pass any port as router.Run(":" + port)
 }
